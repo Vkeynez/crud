@@ -9,8 +9,8 @@ function App() {
     <BrowserRouter>
       <ResponsiveAppBar />
       <Routes>
-        <Route path="/" element={<AllUsers /> } />
-        <Route path="/add" element={<AddUser />} />
+        <Route path="/" element={<AddUser />} />
+        <Route path="/all" element={<AllUsers /> } />
         <Route path="/add/:id" element={<AddUser />} />
         <Route path='/*' element={<NotFound />} />
       </Routes>
