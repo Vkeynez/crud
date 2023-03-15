@@ -73,7 +73,7 @@ const AddUser = () => {
         await addUser(values)
       }
 
-      navigate('/');
+      navigate('/all');
     } catch (error) {
       if (error.response.status === 401) {
         formik.setFieldError('employeeId', error.response.data.message)
@@ -205,12 +205,15 @@ const AddUser = () => {
             />
             <Stack spacing={2} justifyContent='space-between' direction={{ xs: 'column', md: 'row' }}>
 
-              <Button color={'error'} sx={{ textTransform: 'none' }} variant="outlined" type="reset" onClick={formik.resetForm} >
+              <Button color={'error'} sx={{ textTransform: 'none' }} variant="outlined" type="reset" onClick={() => {
+                setInitialValues(initialValue)
+                formik.resetForm()
+              }} >
                 Clear
                 <RestartAltIcon sx={{ marginLeft: 1 }} />
               </Button>
 
-              <Button color={'inherit'} sx={{ textTransform: 'none' }} variant="outlined" LinkComponent={Link} to='/'>
+              <Button color={'inherit'} sx={{ textTransform: 'none' }} variant="outlined" LinkComponent={Link} to='/all'>
                 View
                 <ListAltIcon sx={{ marginLeft: 1 }} />
               </Button>

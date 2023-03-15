@@ -13,8 +13,8 @@ import { Link } from 'react-router-dom';
 const pages = ['Add User', 'All Users'];
 
 const navigate = {
-  'Add User': '/add',
-  'All Users': '/'
+  'Add User': '/',
+  'All Users': '/all'
 }
 
 function ResponsiveAppBar() {
